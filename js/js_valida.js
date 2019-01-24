@@ -1,35 +1,21 @@
 
-    function valida_email(){
+    function valida_email(email){
         
-        var email;
-        var arroba;
-        var ponto;
-
-        email = document.getElementById("txt_email").value
+        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
         
-        arroba = email.search("@");
+        if(email.value.match(mailformat)){
 
-        ponto = email.search(".");
-        alert(ponto);
-        
+            document.form1.email.focus();
 
-   
-        
-       /* if(arroba < 3){
-
-            
-            alert('E-mail inválido');
-
-        }else if(ponto < ( arroba + 7 )){
-
-            alert(ponto);
-            alert('E-mail inválido');
-            
+            return true;
 
         }else{
+        
+            alert("Favor inserir um email válido!");
 
-            alert('caraio');
+            document.form1.email.focus();
 
-        }*/
+            return false;
 
-    }
+        }
+    }   

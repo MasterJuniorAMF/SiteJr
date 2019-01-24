@@ -207,13 +207,13 @@
           <h2 class="mb-4">Entre em contato!</h2>
         </div>
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-          <form>
+          <form name="form1">
             <div class="form-row">
               <div class="col-12 col-md-9 mb-2 mb-md-0">
-                <input type="email" id="txt_email" class="form-control form-control-lg" placeholder="Informe seu E-mail" required>
+                <input name='email' id="txt_email" class="form-control form-control-lg" placeholder="Informe seu E-mail" required>
               </div>
               <div class="col-12 col-md-3">
-                <button type="submit" id="btn_email" onclick="valida_email()" class="btn btn-block btn-lg btn-primary">&#63;</button>
+                <button type="submit" id="btn_email" onclick="valida_email(document.form1.email)" class="btn btn-block btn-lg btn-primary">&#63;</button>
               </div>
             </div>
           </form>
