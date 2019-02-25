@@ -3,7 +3,9 @@
 	
 	$Mailer = new PHPMailer();
 	
-	$email = ($_POST['email']);
+	$email   = ($_POST['email']);
+	$body    = ($_POST['corpo']);
+	$subject = ($_POST['assunto']);
 	
 	//Define que será usado SMTP
 	$Mailer->IsSMTP();
@@ -31,13 +33,13 @@
 	$Mailer->From = 'mailermasterjr@gmail.com';
 	
 	//Nome do Remetente
-	$Mailer->FromName = 'Celke';
+	$Mailer->FromName = $email;
 	
 	//Assunto da mensagem
-	$Mailer->Subject = 'Titulo - Recuperar Senha';
+	$Mailer->Subject = $subject;
 	
 	//Corpo da Mensagem
-	$Mailer->Body = 'Conteudo do E-mail';
+	$Mailer->Body = $body;
 	
 	//Corpo da mensagem em texto
 	$Mailer->AltBody = 'conteudo do E-mail em texto';
