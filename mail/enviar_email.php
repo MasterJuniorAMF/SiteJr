@@ -1,5 +1,5 @@
 <?php
-	require '/public/mail/PHPMailera/PHPMailerAutoload.php';
+	require '/public/PHPMailer/PHPMailerAutoload.php';
 	
 	$Mailer = new PHPMailer();
 	

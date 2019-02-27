@@ -1,3 +1,0 @@
-Baixar a classe phpmailer.
-
-http://phpmailer.worxware.com/
