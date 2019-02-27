@@ -1,13 +1,22 @@
 .no_margin{
 
     margin-bottom: 0px !important; 
-
+    
 }
-
+@media (orientation: portrait){
+	.no_margin{
+         margin-top: 20%;
+    }
+}
+@media (orientation: landscape){
+	.no_margin{
+	 	margin-top: 5%;
+    }
+}
 .faixada{
 
-    margin-top: -30px !important;
-    margin-bottom: 20px !important;
+    padding-top: 2%;
+    padding-bottom: 2%;
 
 }
 
@@ -17,4 +26,82 @@
     height: 2px;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(56, 56, 56, 0.75), rgba(0, 0, 0, 0)) !important;
 
+}
+
+.blue_section{
+    padding-top: 1%;
+    padding-bottom: 2%;
+}
+
+.sombra{
+    text-shadow: black 0.03em 0.03em 0.1em !important;
+}
+
+.animacao{
+    animation-duration: 2.5s;
+    animation-name: faceitup;
+}
+
+@keyframes faceitup {
+  from {
+    margin-top: 100%;
+    width: 100%
+  }
+
+  to {
+    margin-top: 0%;
+    width: 100%;
+  }
+}
+
+@media (max-height:736px){
+	header.masthead{
+	 	height: 700px !important;
+    }
+}
+@media (min-height: 768px){
+	header.masthead{
+	 	height: 765px !important;
+	}
+}
+
+@media (max-height:736px){
+	H1{
+	 	font-size: 2rem;
+    }
+}
+@media (min-height: 768px){
+    H1{
+	 	font-size: 3rem;
+	}
+}
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fefefe;
+    z-index: 99999;
+    height: 100%;
+    width: 100%;
+    overflow: hidden !important;
+}
+
+.loaded {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-image: url(../img/preloading.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    -moz-background-size: cover;
+    background-size: cover;
+    margin: -20px 0 0 -20px;
+}
+
+.justify{
+    text-align: justify !important;
 }
