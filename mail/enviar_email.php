@@ -54,8 +54,7 @@
 		}else{
 			echo "Erro no envio do e-mail: " . $Mailer->ErrorInfo;
 		}
-
-			
+	
 ?>
 
 
