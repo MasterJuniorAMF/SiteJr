@@ -1,7 +1,7 @@
 <?php
 
 	$email   = ($_POST['email']);
-	$to = "mailermasterjr@gmail.com";
+	$to = "zanon.dudu@gmail.com";
 	$subject = ($_POST['assunto']);
 	$txt = ($_POST['corpo']);
 	$headers = "Responder para:" . $email . "\r\n" .
