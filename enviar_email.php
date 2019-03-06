@@ -1,26 +1,38 @@
 <?php
+$email = $_POST['email'];
+//pega os dados que foi digitado no ID email.
 
-	$email   = ($_POST['email']);
-	$subject = ($_POST['assunto']);
-	$txt = ($_POST['corpo']);
-	$email_remetente = "mailermasterjr@gmail.com";
-	$headers = "MIME-Version: 1.1\n";
-	$headers .= "Content-type: text/plain; charset=iso-8859-1\n";
-	$headers .= "From: $email_remetente\n"; // remetente
-	$headers .= "Return-Path: $email_remetente\n"; // return-path
-	$headers .= "Reply-To: $$email \n"; // Endereço (devidamente validado) que o seu usuário informou no contato
-	
-	$retorno = mail("mailermasterjr@gmail.com", $subject, "$txt", $headers, "-f$email_remetente");
+$subject = $_POST['assunto'];
+//pega os dados que foi digitado no ID sebject.
 
-	if(retorno === false){
+$message = $_POST['corpo'];
+//pega os dados que foi digitado no ID message.
 
-		echo('caraio');
+$headers = "From: $email\r\n";
+$headers .= "Reply-To: $email\r\n";
 
-	}else{
+/*abaixo contém os dados que serão enviados para o email
+cadastrado para receber o formulário*/
 
-		echo('foi');
+$corpo = "Formulário enviado\n";
+$corpo .= "Email: " . $email . "\n";
+$corpo .= "Comentários: " . $message . "\n";
 
-	}
+$email_to = 'mailermasterjr@gmail.com';
+//não esqueça de substituir este email pelo seu.
 
+$status = mail($email_to, $subject, $corpo, $headers);
+//enviando o email.
+
+if ($status) {
+  echo "<script> alert('Formulário enviado com sucesso!'); </script>";
+  
+//mensagem de form enviado com sucesso.
+
+} else {
+  echo "<script> alert('Falha ao enviar o Formulário.'); </script>";
+  
+//mensagem de erro no envio. 
+
+}
 ?>
-
