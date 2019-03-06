@@ -1,14 +1,23 @@
 <?php
 
-$email   = ($_POST['email']);
+	$email   = ($_POST['email']);
+	$to = "mailermasterjr@gmail.com";
+	$subject = ($_POST['assunto']);
+	$txt = ($_POST['corpo']);
+	$headers = "Responder para:" . $email . "\r\n" .
+	"Teste";
 
-$to = "mailermasterjr@gmail.com";
-$subject = ($_POST['assunto']);
-$txt = ($_POST['corpo']);
-$headers = "Responder para:" . $email . "\r\n" .
-"CC: somebodyelse@example.com";
+	$retorno = mail($to,$subject,$txt,$headers);
 
-mail($to,$subject,$txt,$headers);
+	if(retorno === false){
+
+		echo('caraio');
+
+	}else{
+
+		echo('uhu');
+
+	}
 
 ?>
 
