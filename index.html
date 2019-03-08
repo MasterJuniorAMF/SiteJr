@@ -30,10 +30,33 @@
       $(window).load(function() {      //Do the code in the {}s when the window has loaded 
        $(".preloader").fadeOut("slow");  //Fade out the #loader div
       });
+
+
+      function slide1(){
+      var element = document.getElementById("id");
+          element.classList.remove("icon-screen-desktop");
+          element.classList.add("icon-screen-smartphone");
+          setTimeout("slide2()", 1500);
+      } 
+      function slide2(){
+      var element = document.getElementById("id");
+          element.classList.remove("icon-screen-smartphone");
+          element.classList.add("icon-screen-tablet");
+          setTimeout("slide3()", 1500);
+      }
+        
+      function slide3(){
+      var element = document.getElementById("id");
+          element.classList.remove("icon-screen-tablet");
+          element.classList.add("icon-screen-desktop");
+          setTimeout("slide1()", 1500)
+      }
+            
     </script>
+    
 
   </head>
-  <body>
+  <body onLoad="slide1()">
     
     <div class='preloader'>
       <div class='loaded'>&nbsp;
@@ -143,7 +166,7 @@
             <div class="col-lg-4">
               <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
                 <div class="features-icons-icon d-flex">
-                  <i class="icon-screen-smartphone m-auto text-primary"></i>
+                  <i class="icon-screen-smartphone m-auto text-primary" id="id"></i>
                 </div>
                 <h3>Responsivo</h3>
                 <p class="lead mb-0">Site se adapta ao tamanho do seu aparelho</p>
